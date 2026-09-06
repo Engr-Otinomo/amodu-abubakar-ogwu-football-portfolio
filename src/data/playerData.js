@@ -189,14 +189,13 @@ export const playerData = {
     cvFilename: "Amodu_Abubakar_Ogwu_Football_CV.pdf"
   },
 
-  // Manager / Coach Representative
+  // Manager / Coach
   representative: {
     name: "Partrick Clinton Erutere",
     role: "Manager / Coach",
-    region: "United Kingdom / International",
     phoneDisplay: "+44 7440 733165",
     phoneLink: "tel:+447440733165",
-    whatsappLink: "https://wa.me/447440733165?text=Hello%20Mr.%20Erutere%2C%20I%20am%20contacting%20you%20regarding%20a%20football%20opportunity%20for%20Amodu%20Abubakar%20Ogwu.",
+    whatsappLink: "https://wa.me/447440733165",
     email: "Clintonpartrick32@gmail.com",
     emailLink: "mailto:Clintonpartrick32@gmail.com"
   },

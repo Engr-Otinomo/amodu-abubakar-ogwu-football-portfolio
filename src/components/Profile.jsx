@@ -1,6 +1,6 @@
 import React from 'react';
 import { playerData } from '../data/playerData';
-import { User, Calendar, Flag, Ruler, Weight, Footprints, Compass, Shield, CheckCircle, FileText } from 'lucide-react';
+import { User, Calendar, Flag, Ruler, Weight, Footprints, Compass, Shield, CheckCircle } from 'lucide-react';
 
 export default function Profile() {
   const profileDetails = [
@@ -18,87 +18,63 @@ export default function Profile() {
   ];
 
   return (
-    <section id="profile" className="py-24 bg-sport-navy relative">
+    <section id="profile" className="py-24 bg-[#F7F8F4] text-[#102A43] relative pitch-grid-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <span className="inline-block text-xs font-display font-bold tracking-widest text-sport-green uppercase bg-sport-emerald/10 px-3 py-1 rounded-full border border-sport-emerald/20">
+          <span className="inline-block text-xs font-display font-bold tracking-widest text-[#22C55E] uppercase bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
             PROFILE
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-[#102A43] tracking-tight uppercase">
             {playerData.profileHeading}
           </h2>
-          <p className="font-display font-semibold text-sm sm:text-base tracking-widest text-sport-gold uppercase">
+          <p className="font-display font-semibold text-sm sm:text-base tracking-widest text-[#D97706] uppercase">
             {playerData.profilePillars}
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-sport-emerald to-sport-gold mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22C55E] to-[#F5B942] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Profile Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
-          {/* Left Column: Headshot Photo Card & Quick Card */}
+          {/* Left Column: Headshot Photo Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative w-full max-w-sm">
-              
-              {/* Outer decorative border */}
-              <div className="relative rounded-2xl overflow-hidden p-1.5 bg-gradient-to-b from-white/20 via-sport-emerald/30 to-sport-dark shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden p-2 bg-[#FFFFFF] border border-[#D8E2DE] shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative rounded-xl overflow-hidden bg-white">
                   <img
                     src={playerData.gallery[1].src}
                     alt={playerData.gallery[1].alt}
-                    className="w-full h-[400px] sm:h-[460px] object-cover object-center transition-transform duration-500 hover:scale-105"
+                    className="w-full h-[400px] sm:h-[480px] object-cover object-center transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
                   {/* Bottom overlay badge */}
-                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-sport-navy via-sport-navy/80 to-transparent p-5 text-center">
+                  <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#071A2D] via-[#071A2D]/85 to-transparent p-5 text-center">
                     <h3 className="font-display font-black text-2xl text-white uppercase tracking-wide">
                       {playerData.fullName}
                     </h3>
-                    <p className="text-xs font-semibold text-sport-green tracking-widest uppercase mt-0.5">
+                    <p className="text-xs font-semibold text-[#4ADE80] tracking-widest uppercase mt-0.5">
                       {playerData.primaryPosition} • {playerData.currentClub}
                     </p>
                   </div>
                 </div>
               </div>
-
-              {/* Verified scout badge */}
-              <div className="mt-4 p-3.5 rounded-xl glass-panel border border-white/10 flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-sport-emerald/20 flex items-center justify-center text-sport-green">
-                    <CheckCircle size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-white tracking-wide">Official Football CV</p>
-                    <p className="text-[11px] text-sport-muted">Verified stats & background</p>
-                  </div>
-                </div>
-                <a
-                  href={playerData.playerContact.cvFile}
-                  download={playerData.playerContact.cvFilename}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sport-emerald/15 hover:bg-sport-emerald text-sport-green hover:text-sport-navy text-xs font-display font-bold uppercase tracking-wider transition-colors"
-                >
-                  <FileText size={14} />
-                  <span>PDF CV</span>
-                </a>
-              </div>
-
             </div>
           </div>
 
           {/* Right Column: Bio & Attribute Specifications */}
           <div className="lg:col-span-7 flex flex-col space-y-8">
             
-            {/* Biography Text */}
-            <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-4">
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white uppercase tracking-wide flex items-center gap-2">
-                <span className="w-2 h-5 bg-sport-green rounded-full"></span>
+            {/* Biography Text Box */}
+            <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-2xl border border-[#D8E2DE] shadow-sm space-y-4">
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-[#102A43] uppercase tracking-wide flex items-center gap-2.5">
+                <span className="w-2.5 h-6 bg-[#22C55E] rounded-full"></span>
                 <span>SCOUTING OVERVIEW & BIOGRAPHY</span>
               </h3>
-              <div className="space-y-3.5 text-sport-muted leading-relaxed text-sm sm:text-base font-normal">
+              <div className="space-y-3.5 text-[#52667A] leading-relaxed text-sm sm:text-base font-normal">
                 {playerData.profileBioParagraphs.map((para, idx) => (
-                  <p key={idx} className={idx === 0 ? "text-sport-light font-medium" : ""}>
+                  <p key={idx} className={idx === 0 ? "text-[#102A43] font-medium" : ""}>
                     {para}
                   </p>
                 ))}
@@ -107,7 +83,7 @@ export default function Profile() {
 
             {/* Technical Attribute Grid */}
             <div>
-              <h4 className="font-display font-bold text-sm tracking-widest text-sport-muted uppercase mb-4">
+              <h4 className="font-display font-bold text-sm tracking-widest text-[#52667A] uppercase mb-4">
                 PLAYER SPECIFICATIONS
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -118,26 +94,26 @@ export default function Profile() {
                       key={idx}
                       className={`p-3.5 rounded-xl border transition-all duration-200 flex items-center justify-between ${
                         detail.status
-                          ? 'bg-sport-emerald/10 border-sport-emerald/40'
+                          ? 'bg-emerald-50/70 border-emerald-300'
                           : detail.highlight
-                          ? 'bg-sport-dark/90 border-sport-green/30'
-                          : 'bg-sport-dark/40 border-white/5 hover:border-white/15'
+                          ? 'bg-[#FFFFFF] border-emerald-400 shadow-sm'
+                          : 'bg-[#FFFFFF] border-[#D8E2DE] hover:border-slate-300 shadow-sm'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
-                        <div className={`p-1.5 rounded-lg ${detail.highlight ? 'bg-sport-green/10 text-sport-green' : 'bg-white/5 text-sport-muted'}`}>
+                        <div className={`p-1.5 rounded-lg ${detail.highlight || detail.status ? 'bg-emerald-100 text-[#22C55E]' : 'bg-slate-100 text-[#52667A]'}`}>
                           <Icon size={16} />
                         </div>
-                        <span className="text-xs uppercase tracking-wider text-sport-muted font-medium">
+                        <span className="text-xs uppercase tracking-wider text-[#52667A] font-medium">
                           {detail.label}
                         </span>
                       </div>
                       <span className={`font-display font-bold text-sm tracking-wide ${
                         detail.status
-                          ? 'text-sport-green'
+                          ? 'text-[#22C55E]'
                           : detail.highlight
-                          ? 'text-white'
-                          : 'text-sport-light'
+                          ? 'text-[#102A43]'
+                          : 'text-[#102A43]'
                       }`}>
                         {detail.value}
                       </span>

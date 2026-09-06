@@ -16,8 +16,9 @@ export default function Navbar() {
     { name: 'Achievements', href: '#achievements' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Highlights', href: '#highlights' },
-    { name: 'Representative', href: '#representative' },
     { name: 'Contact', href: '#contact' },
+    { name: 'CV', href: '#cv' },
+    { name: 'Manager', href: '#representative' },
   ];
 
   useEffect(() => {
@@ -121,8 +122,8 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#representative"
-              onClick={(e) => handleNavClick(e, '#representative')}
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-sport-emerald text-sport-navy hover:bg-sport-green focus:outline-none focus:ring-2 focus:ring-sport-green focus:ring-offset-2 focus:ring-offset-sport-navy transition-all duration-200 shadow-lg shadow-sport-emerald/25 hover:scale-105 active:scale-95"
             >
               <span className="w-2 h-2 rounded-full bg-sport-navy animate-ping"></span>
@@ -185,12 +186,12 @@ export default function Navbar() {
 
           <div className="pt-6 border-t border-white/10 space-y-3 mt-6">
             <a
-              href="#representative"
-              onClick={(e) => handleNavClick(e, '#representative')}
+              href="#contact"
+              onClick={(e) => handleNavClick(e, '#contact')}
               className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-sport-emerald to-sport-green text-sport-navy font-display font-black text-center tracking-wider text-base uppercase shadow-lg shadow-sport-emerald/30 flex items-center justify-center gap-2"
             >
               <ShieldCheck size={20} />
-              SCOUT & AGENT CONTACT
+              CONTACT PLAYER
             </a>
             <a
               href={playerData.playerContact.whatsappLink}
@@ -198,7 +199,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="w-full py-3 px-4 rounded-xl bg-sport-dark text-white font-display font-bold text-center tracking-wider text-sm uppercase border border-white/15 flex items-center justify-center gap-2"
             >
-              MESSAGE AMODU ON WHATSAPP
+              MESSAGE ON WHATSAPP
             </a>
           </div>
         </div>

@@ -19,7 +19,6 @@ export default function Stats() {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
 
-          // Animate numbers smoothly over 1800ms
           const duration = 1800;
           const startTime = performance.now();
 
@@ -33,7 +32,6 @@ export default function Stats() {
           const step = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
             const easeOut = 1 - Math.pow(1 - progress, 3);
 
             setCounts({
@@ -73,8 +71,8 @@ export default function Stats() {
       label: "Goals",
       value: counts.goals,
       icon: Target,
-      accent: "text-sport-emerald",
-      border: "hover:border-sport-emerald/50",
+      accent: "text-[#22C55E]",
+      iconBg: "bg-emerald-50 border-emerald-200 text-[#22C55E]",
       description: "Deadly finishing from central & wide positions"
     },
     {
@@ -82,8 +80,8 @@ export default function Stats() {
       label: "Assists",
       value: counts.assists,
       icon: Flame,
-      accent: "text-sport-green",
-      border: "hover:border-sport-green/50",
+      accent: "text-[#16A34A]",
+      iconBg: "bg-green-50 border-green-200 text-[#16A34A]",
       description: "Visionary chance creation & key passes"
     },
     {
@@ -91,8 +89,8 @@ export default function Stats() {
       label: "Goal Contributions",
       value: counts.contributions,
       icon: TrendingUp,
-      accent: "text-sport-gold",
-      border: "hover:border-sport-gold/50",
+      accent: "text-[#D97706]",
+      iconBg: "bg-amber-50 border-amber-200 text-[#D97706]",
       description: "Total recorded output for Delight FA"
     },
     {
@@ -100,28 +98,28 @@ export default function Stats() {
       label: "Awards Won",
       value: counts.awards,
       icon: Trophy,
-      accent: "text-amber-400",
-      border: "hover:border-amber-400/50",
+      accent: "text-[#B45309]",
+      iconBg: "bg-yellow-50 border-yellow-200 text-[#B45309]",
       description: "Confirmed individual & tournament honours"
     }
   ];
 
   return (
-    <section id="statistics" ref={sectionRef} className="py-24 bg-sport-navy/90 relative pitch-grid border-y border-white/5">
+    <section id="statistics" ref={sectionRef} className="py-24 bg-[#EEF3F1] text-[#102A43] relative pitch-grid-light border-y border-[#D8E2DE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <span className="inline-block text-xs font-display font-bold tracking-widest text-sport-green uppercase bg-sport-emerald/10 px-3 py-1 rounded-full border border-sport-emerald/20">
+          <span className="inline-block text-xs font-display font-bold tracking-widest text-[#22C55E] uppercase bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
             PERFORMANCE
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-[#102A43] tracking-tight uppercase">
             THE NUMBERS
           </h2>
-          <p className="text-sport-muted text-sm sm:text-base font-medium max-w-xl mx-auto">
+          <p className="text-[#52667A] text-sm sm:text-base font-medium max-w-xl mx-auto">
             Delight FA recorded competition metrics demonstrating decisive output across the pitch.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-sport-emerald to-sport-gold mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22C55E] to-[#F5B942] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* 4 Animated Metric Cards */}
@@ -131,20 +129,20 @@ export default function Stats() {
             return (
               <div
                 key={stat.id}
-                className={`glass-panel p-6 rounded-2xl border border-white/10 ${stat.border} transition-all duration-300 group flex flex-col justify-between`}
+                className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#D8E2DE] shadow-sm hover:shadow-md hover:border-emerald-300 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-sport-dark/90 border border-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                      <Icon className={`w-6 h-6 ${stat.accent}`} />
+                    <div className={`w-12 h-12 rounded-xl border flex items-center justify-center group-hover:scale-110 transition-transform ${stat.iconBg}`}>
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-display font-bold uppercase tracking-wider text-sport-muted px-2.5 py-1 rounded-md bg-white/5">
+                    <span className="text-[11px] font-display font-bold uppercase tracking-wider text-[#52667A] px-2.5 py-1 rounded-md bg-slate-100">
                       OFFICIAL RECORD
                     </span>
                   </div>
 
                   <div className="space-y-1">
-                    <div className="font-display font-black text-5xl sm:text-6xl text-white tracking-tight leading-none flex items-baseline">
+                    <div className="font-display font-black text-5xl sm:text-6xl text-[#102A43] tracking-tight leading-none flex items-baseline">
                       <span>{stat.value}</span>
                     </div>
                     <h3 className={`font-display font-bold text-lg uppercase tracking-wider ${stat.accent}`}>
@@ -153,7 +151,7 @@ export default function Stats() {
                   </div>
                 </div>
 
-                <p className="text-xs text-sport-muted pt-4 mt-4 border-t border-white/5">
+                <p className="text-xs text-[#52667A] pt-4 mt-4 border-t border-[#D8E2DE]">
                   {stat.description}
                 </p>
               </div>
@@ -161,10 +159,10 @@ export default function Stats() {
           })}
         </div>
 
-        {/* Supporting sentence requirement */}
+        {/* Supporting sentence */}
         <div className="mt-12 text-center max-w-2xl mx-auto">
-          <div className="p-4 rounded-xl bg-sport-dark/60 border border-sport-green/20">
-            <p className="text-sm sm:text-base font-medium text-sport-light tracking-wide">
+          <div className="p-4 rounded-xl bg-[#FFFFFF] border border-emerald-300 shadow-sm">
+            <p className="text-sm sm:text-base font-medium text-[#102A43] tracking-wide">
               {playerData.statsSummary}
             </p>
           </div>

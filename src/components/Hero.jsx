@@ -1,6 +1,6 @@
 import React from 'react';
 import { playerData } from '../data/playerData';
-import { MessageCircle, Play, Download, Shield, Sparkles, CheckCircle2, Award } from 'lucide-react';
+import { MessageCircle, Play, Shield, Sparkles, CheckCircle2, Award } from 'lucide-react';
 
 export default function Hero() {
   const handleScrollToHighlights = (e) => {
@@ -115,18 +115,6 @@ export default function Hero() {
               >
                 <Play size={18} className="fill-sport-green text-sport-green" />
                 <span>WATCH HIGHLIGHTS</span>
-              </a>
-
-              {/* 3. Download CV */}
-              <a
-                href={playerData.playerContact.cvFile}
-                download={playerData.playerContact.cvFilename}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-white/5 text-sport-light hover:text-white hover:bg-white/10 border border-white/10 focus:outline-none focus:ring-2 focus:ring-sport-green transition-all duration-200 hover:scale-[1.02] active:scale-95"
-              >
-                <Download size={18} className="text-sport-gold" />
-                <span>DOWNLOAD CV</span>
               </a>
             </div>
 

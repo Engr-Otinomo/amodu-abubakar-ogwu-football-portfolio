@@ -1,6 +1,6 @@
 import React from 'react';
 import { playerData } from '../data/playerData';
-import { MessageCircle, Phone, Mail, FileDown, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, Phone, Mail, ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
   const { playerContact } = playerData;
@@ -8,61 +8,61 @@ export default function Contact() {
   const contactCards = [
     {
       id: "whatsapp",
-      title: "Direct WhatsApp",
+      title: "DIRECT WHATSAPP",
       subtitle: "Fastest response for match & trial inquiries",
-      value: playerContact.whatsappNumberDisplay,
-      href: playerContact.whatsappLink,
+      value: "+234 806 450 3457",
+      href: "https://wa.me/2348064503457",
       icon: MessageCircle,
       isExternal: true,
-      color: "text-sport-green",
-      bg: "bg-sport-emerald/10",
-      border: "hover:border-sport-green/50",
+      color: "text-[#22C55E]",
+      bg: "bg-emerald-50 border-emerald-200",
+      border: "hover:border-emerald-400",
       badge: "ACTIVE NOW"
     },
     {
       id: "phone",
-      title: "Direct Call",
+      title: "DIRECT CALL",
       subtitle: "Direct mobile line (Nigeria)",
-      value: playerContact.phoneDisplay,
-      href: playerContact.phoneLink,
+      value: "+234 806 450 3457",
+      href: "tel:+2348064503457",
       icon: Phone,
       isExternal: false,
-      color: "text-sport-gold",
-      bg: "bg-sport-gold/10",
-      border: "hover:border-sport-gold/50",
+      color: "text-[#D97706]",
+      bg: "bg-amber-50 border-amber-200",
+      border: "hover:border-amber-400",
       badge: "DIRECT LINE"
     },
     {
       id: "email",
-      title: "Email Correspondence",
-      subtitle: "Official email communications",
-      value: playerContact.email,
-      href: playerContact.emailLink,
+      title: "EMAIL",
+      subtitle: "Official email correspondence",
+      value: "abumadridamodu@gmail.com",
+      href: "mailto:abumadridamodu@gmail.com",
       icon: Mail,
       isExternal: false,
-      color: "text-sky-400",
-      bg: "bg-sky-400/10",
-      border: "hover:border-sky-400/50",
+      color: "text-[#102A43]",
+      bg: "bg-slate-100 border-slate-200",
+      border: "hover:border-slate-400",
       badge: "OFFICIAL"
     }
   ];
 
   return (
-    <section id="contact" className="py-24 bg-sport-navy relative">
+    <section id="contact" className="py-24 bg-[#F7F8F4] text-[#102A43] relative pitch-grid-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <span className="inline-block text-xs font-display font-bold tracking-widest text-sport-green uppercase bg-sport-emerald/10 px-3 py-1 rounded-full border border-sport-emerald/20">
+          <span className="inline-block text-xs font-display font-bold tracking-widest text-[#22C55E] uppercase bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
             GET IN TOUCH
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-[#102A43] tracking-tight uppercase">
             CONTACT AMODU
           </h2>
-          <p className="text-sport-muted text-sm sm:text-base font-medium max-w-2xl mx-auto">
+          <p className="text-[#52667A] text-sm sm:text-base font-medium max-w-2xl mx-auto">
             Currently available for football trials, scouting opportunities, club enquiries, and professional discussions.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-sport-emerald to-sport-gold mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22C55E] to-[#F5B942] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Contact Cards Grid */}
@@ -75,68 +75,38 @@ export default function Contact() {
                 href={card.href}
                 target={card.isExternal ? "_blank" : undefined}
                 rel={card.isExternal ? "noopener noreferrer" : undefined}
-                className={`glass-panel p-6 sm:p-7 rounded-2xl border border-white/10 ${card.border} transition-all duration-300 transform hover:-translate-y-1 group flex flex-col justify-between shadow-xl focus:outline-none focus:ring-2 focus:ring-sport-green`}
+                className={`bg-[#FFFFFF] p-6 sm:p-7 rounded-2xl border border-[#D8E2DE] ${card.border} transition-all duration-300 transform hover:-translate-y-1 group flex flex-col justify-between shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#22C55E]`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`w-12 h-12 rounded-xl ${card.bg} flex items-center justify-center ${card.color} group-hover:scale-110 transition-transform`}>
+                    <div className={`w-12 h-12 rounded-xl border flex items-center justify-center ${card.bg} ${card.color} group-hover:scale-110 transition-transform`}>
                       <Icon size={24} />
                     </div>
-                    <span className="text-[10px] font-display font-bold uppercase tracking-wider text-sport-muted bg-white/5 px-2 py-0.5 rounded border border-white/10">
+                    <span className="text-[10px] font-display font-bold uppercase tracking-wider text-[#52667A] bg-slate-100 px-2 py-0.5 rounded border border-[#D8E2DE]">
                       {card.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-xl text-white uppercase tracking-wide group-hover:text-sport-green transition-colors">
+                  <h3 className="font-display font-bold text-xl text-[#102A43] uppercase tracking-wide group-hover:text-[#22C55E] transition-colors">
                     {card.title}
                   </h3>
                   
-                  <p className="text-xs text-sport-muted mt-1">
+                  <p className="text-xs text-[#52667A] mt-1">
                     {card.subtitle}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="font-display font-bold text-sm sm:text-base text-white tracking-wide break-all">
+                <div className="mt-6 pt-4 border-t border-[#D8E2DE] flex items-center justify-between">
+                  <span className="font-display font-bold text-sm sm:text-base text-[#102A43] tracking-wide break-all">
                     {card.value}
                   </span>
-                  <span className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-sport-muted group-hover:text-white group-hover:bg-sport-green group-hover:text-sport-navy transition-colors flex-shrink-0 ml-2">
+                  <span className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-[#52667A] group-hover:bg-[#22C55E] group-hover:text-white transition-colors flex-shrink-0 ml-2">
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
               </a>
             );
           })}
-        </div>
-
-        {/* CV Download Feature Banner */}
-        <div className="mt-12 max-w-5xl mx-auto">
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-sport-dark via-sport-surface to-sport-dark border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div className="flex items-center gap-4 text-center sm:text-left">
-              <div className="w-14 h-14 rounded-2xl bg-sport-gold/15 border border-sport-gold/30 flex items-center justify-center text-sport-gold flex-shrink-0">
-                <FileDown size={28} />
-              </div>
-              <div>
-                <h3 className="font-display font-black text-xl text-white uppercase tracking-wide">
-                  Complete Football Player CV
-                </h3>
-                <p className="text-xs sm:text-sm text-sport-muted mt-0.5">
-                  Download the official 3-page scouting document with complete athletic metrics and career references.
-                </p>
-              </div>
-            </div>
-
-            <a
-              href={playerContact.cvFile}
-              download={playerContact.cvFilename}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-sport-emerald hover:bg-sport-green text-sport-navy transition-all duration-200 shadow-xl shadow-sport-emerald/25 hover:scale-105 active:scale-95 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-sport-green focus:ring-offset-2 focus:ring-offset-sport-navy"
-            >
-              <FileDown size={18} />
-              <span>DOWNLOAD PLAYER CV</span>
-            </a>
-          </div>
         </div>
 
       </div>

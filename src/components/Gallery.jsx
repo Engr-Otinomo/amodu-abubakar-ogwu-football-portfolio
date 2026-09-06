@@ -56,21 +56,21 @@ export default function Gallery() {
   }, [selectedImageIndex]);
 
   return (
-    <section id="gallery" className="py-24 bg-sport-navy/95 relative pitch-grid border-t border-white/5">
+    <section id="gallery" className="py-24 bg-[#EEF3F1] text-[#102A43] relative pitch-grid-light border-t border-[#D8E2DE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-2">
-          <span className="inline-block text-xs font-display font-bold tracking-widest text-sport-green uppercase bg-sport-emerald/10 px-3 py-1 rounded-full border border-sport-emerald/20">
+          <span className="inline-block text-xs font-display font-bold tracking-widest text-[#22C55E] uppercase bg-emerald-50 px-3.5 py-1 rounded-full border border-emerald-200">
             GALLERY
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-5xl text-[#102A43] tracking-tight uppercase">
             IN ACTION
           </h2>
-          <p className="text-sport-muted text-sm sm:text-base font-medium max-w-xl mx-auto">
+          <p className="text-[#52667A] text-sm sm:text-base font-medium max-w-xl mx-auto">
             High-resolution visual record of Amodu across matches, pitch training, and official team sessions.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-sport-emerald to-sport-gold mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22C55E] to-[#F5B942] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* 4 Photo Sports Grid */}
@@ -79,7 +79,7 @@ export default function Gallery() {
             <div
               key={img.id}
               onClick={() => openLightbox(idx)}
-              className="group relative rounded-2xl overflow-hidden bg-sport-dark/60 border border-white/10 hover:border-sport-green/50 cursor-pointer shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col"
+              className="group relative rounded-2xl overflow-hidden bg-[#FFFFFF] p-2 sm:p-2.5 border border-[#D8E2DE] hover:border-emerald-300 cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -90,38 +90,38 @@ export default function Gallery() {
               }}
               aria-label={`View full image: ${img.alt}`}
             >
-              {/* Image Container with Fixed Aspect Ratio */}
-              <div className="relative w-full h-80 sm:h-96 overflow-hidden bg-sport-surface">
+              {/* Image Container */}
+              <div className="relative w-full h-80 sm:h-96 overflow-hidden rounded-xl bg-slate-100">
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
 
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-sport-navy via-sport-navy/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071A2D] via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
 
                 {/* Hover Eye / Expand Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-14 h-14 rounded-full bg-sport-emerald text-sport-navy flex items-center justify-center shadow-xl shadow-sport-emerald/40 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-full bg-[#22C55E] text-white flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
                     <Maximize2 size={24} className="stroke-[2.5]" />
                   </div>
                 </div>
 
                 {/* Category Tag (Top Right) */}
                 <div className="absolute top-3 right-3">
-                  <span className="text-[10px] font-display font-bold uppercase tracking-widest text-white bg-sport-navy/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/15">
+                  <span className="text-[10px] font-display font-bold uppercase tracking-widest text-white bg-[#071A2D]/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/20">
                     {img.category}
                   </span>
                 </div>
 
-                {/* Bottom Caption */}
-                <div className="absolute bottom-0 inset-x-0 p-4">
-                  <p className="font-display font-bold text-lg text-white uppercase tracking-wide group-hover:text-sport-green transition-colors leading-tight">
+                {/* Bottom Caption Overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-4 text-left">
+                  <p className="font-display font-bold text-lg text-white uppercase tracking-wide group-hover:text-[#4ADE80] transition-colors leading-tight">
                     {img.title}
                   </p>
-                  <p className="text-xs text-sport-muted tracking-wider uppercase mt-0.5">
+                  <p className="text-xs text-slate-200 tracking-wider uppercase mt-0.5">
                     {img.subtitle}
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export default function Gallery() {
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-5 right-5 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-sport-green"
+            className="absolute top-5 right-5 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
             aria-label="Close image lightbox"
           >
             <X size={26} />
@@ -156,7 +156,7 @@ export default function Gallery() {
               e.stopPropagation();
               prevImage();
             }}
-            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-sport-emerald hover:text-sport-navy text-white transition-all focus:outline-none focus:ring-2 focus:ring-sport-green"
+            className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-[#22C55E] hover:text-[#071A2D] text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
             aria-label="Previous image"
           >
             <ChevronLeft size={28} />
@@ -168,7 +168,7 @@ export default function Gallery() {
               e.stopPropagation();
               nextImage();
             }}
-            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-sport-emerald hover:text-sport-navy text-white transition-all focus:outline-none focus:ring-2 focus:ring-sport-green"
+            className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-white/10 hover:bg-[#22C55E] hover:text-[#071A2D] text-white transition-all focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
             aria-label="Next image"
           >
             <ChevronRight size={28} />
@@ -188,10 +188,10 @@ export default function Gallery() {
               <p className="text-white font-display font-bold text-lg sm:text-xl uppercase tracking-wide">
                 {playerData.gallery[selectedImageIndex].title}
               </p>
-              <p className="text-sport-muted text-xs sm:text-sm mt-1">
+              <p className="text-slate-300 text-xs sm:text-sm mt-1">
                 {playerData.gallery[selectedImageIndex].alt}
               </p>
-              <p className="text-[11px] text-sport-green font-semibold mt-1 uppercase tracking-widest">
+              <p className="text-[11px] text-[#4ADE80] font-semibold mt-1 uppercase tracking-widest">
                 Photo {selectedImageIndex + 1} of {playerData.gallery.length}
               </p>
             </div>

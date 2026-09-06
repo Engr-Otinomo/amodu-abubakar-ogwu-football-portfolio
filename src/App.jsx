@@ -9,13 +9,14 @@ import Achievements from './components/Achievements';
 import Gallery from './components/Gallery';
 import Highlights from './components/Highlights';
 import Dream from './components/Dream';
-import Representative from './components/Representative';
 import Contact from './components/Contact';
+import FootballCV from './components/FootballCV';
+import Representative from './components/Representative';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-sport-navy text-sport-light selection:bg-sport-emerald selection:text-sport-navy">
+    <div className="min-h-screen bg-[#F7F8F4] text-[#102A43] selection:bg-[#22C55E] selection:text-[#071A2D]">
       <Navbar />
       <main>
         <Hero />
@@ -27,8 +28,9 @@ export default function App() {
         <Gallery />
         <Highlights />
         <Dream />
-        <Representative />
         <Contact />
+        <FootballCV />
+        <Representative />
       </main>
       <Footer />
     </div>

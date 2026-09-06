@@ -14,21 +14,24 @@ export default function Footer() {
 
   const quickIconLinks = [
     {
-      name: "WhatsApp",
+      name: "Amodu's WhatsApp",
+      label: "Message Amodu on WhatsApp",
       href: playerContact.whatsappLink,
       icon: MessageCircle,
       external: true,
       color: "hover:text-sport-green hover:border-sport-green"
     },
     {
-      name: "Phone",
+      name: "Amodu's Phone",
+      label: "Call Amodu directly",
       href: playerContact.phoneLink,
       icon: Phone,
       external: false,
       color: "hover:text-sport-gold hover:border-sport-gold"
     },
     {
-      name: "Email",
+      name: "Amodu's Email",
+      label: "Email Amodu",
       href: playerContact.emailLink,
       icon: Mail,
       external: false,
@@ -36,6 +39,7 @@ export default function Footer() {
     },
     {
       name: "YouTube Highlight 1",
+      label: "Watch Highlight Video 1 on YouTube",
       href: highlights[0].url,
       icon: Youtube,
       external: true,
@@ -43,6 +47,7 @@ export default function Footer() {
     },
     {
       name: "YouTube Highlight 2",
+      label: "Watch Highlight Video 2 on YouTube",
       href: highlights[1].url,
       icon: Youtube,
       external: true,
@@ -50,6 +55,7 @@ export default function Footer() {
     },
     {
       name: "Football CV",
+      label: "Download Amodu's Football CV (PDF)",
       href: playerContact.cvFile,
       icon: FileText,
       external: true,
@@ -89,8 +95,8 @@ export default function Footer() {
                   rel={link.external ? "noopener noreferrer" : undefined}
                   download={link.download}
                   className={`w-11 h-11 rounded-xl bg-sport-dark/80 border border-white/10 flex items-center justify-center text-sport-light ${link.color} transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-sport-green`}
-                  title={link.name}
-                  aria-label={link.name}
+                  title={link.label}
+                  aria-label={link.label}
                 >
                   <Icon size={20} />
                 </a>

@@ -18,6 +18,13 @@ export default {
           gold: '#F5B942',
           light: '#E5E7EB',
           muted: '#94A3B8',
+          // New light palette
+          bgMain: '#F7F8F4',
+          bgAlt: '#EEF3F1',
+          cardWhite: '#FFFFFF',
+          textMain: '#102A43',
+          textSecondary: '#52667A',
+          borderLight: '#D8E2DE',
         }
       },
       fontFamily: {
