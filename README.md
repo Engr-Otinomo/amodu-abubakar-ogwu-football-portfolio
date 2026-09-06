@@ -46,7 +46,7 @@ npm run dev
 
 *(or `npm.cmd run dev`)*
 
-Open the localhost URL shown in the terminal (typically `http://localhost:5173/amodu-abubakar-ogwu-football-portfolio/`).
+Open the localhost URL shown in the terminal (typically `http://localhost:5173/`).
 
 ### 3. Production Build
 
@@ -60,9 +60,9 @@ The production assets will be built to the `dist` folder.
 
 ---
 
-## 🌐 GitHub Pages Deployment
+## 🌐 Custom Domain & GitHub Pages Deployment
 
-The repository is hosted on GitHub under `amodu-abubakar-ogwu-football-portfolio`.
+The official custom domain is **`https://abubakaramodu.online/`**.
 
 To build and deploy the latest version directly to the `gh-pages` branch:
 
@@ -72,18 +72,13 @@ npm run deploy
 
 *(or `npm.cmd run deploy`)*
 
-This runs `npm run build` and automatically pushes the generated `dist` folder to the `gh-pages` branch.
+This runs `npm run build` and automatically pushes the generated `dist` folder to the `gh-pages` branch with the `CNAME` file pointing to `abubakaramodu.online`.
 
-### Custom Namecheap Domain Setup
+### Namecheap DNS Setup for `abubakaramodu.online`
 
-When the custom domain has been purchased and configured on Namecheap:
-
-1. Add your custom domain to a `CNAME` file inside the `public/` directory (e.g. `public/CNAME` containing `amoduogwu.com`).
-2. Update the `base` property in `vite.config.js` to `'/'`.
-3. In your Namecheap DNS management console:
-   - Add an `ALIAS` or `ANAME` record for `@` pointing to `engr-otinomo.github.io.` (or GitHub Pages IPs: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`).
-   - Add a `CNAME` record for `www` pointing to `engr-otinomo.github.io.`.
-4. Run `npm run deploy`.
+In your Namecheap DNS management console:
+- Add an `ALIAS` or `ANAME` record for `@` pointing to `engr-otinomo.github.io.` (or A records pointing to: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`).
+- Add a `CNAME` record for `www` pointing to `engr-otinomo.github.io.`.
 
 ---
 
